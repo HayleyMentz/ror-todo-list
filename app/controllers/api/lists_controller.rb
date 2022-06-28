@@ -12,7 +12,8 @@ class Api::ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     if @list.save
-      render json: @listelse
+      render json: @list
+    else
       render json: { error: @list.errors }, status: :unprocessable_entity
     end
   end
