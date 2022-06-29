@@ -7,7 +7,7 @@ const AllList = ({ lists, updateList, deleteList }) => (
     lists.map( l =>
       <List
       key={l.id}
-      {...l}
+      {...l} // => cleans up code looping threw all elements  like l.title, l.id, l.desc 
       updateList={updateList}
       deleteListe={deleteList}
       />
