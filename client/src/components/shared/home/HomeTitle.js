@@ -1,10 +1,16 @@
+import { MainHeader, MainText } from "../../styles/shared";
+
 const HomeTitle = () => (
-  <>
-  <hi>
-  Welcome to Todolist!
-  </hi>
+  <MainHeader>
+    <MainText>
+  Welcome 
+  <br/>
+  to 
+  <br/>
+  Todolist!
  
-  </>
+  </MainText>
+  </MainHeader>
 )
 
 export default HomeTitle;

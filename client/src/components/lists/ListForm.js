@@ -1,12 +1,18 @@
-import { useState } from 'reacr';
+import { useState, useEffect } from 'react';
 
-const ListForm = ({}) => {
+const ListForm = ({ addList, id, title, desc, updateList, setEdit}) => {
 const [list, setList] = useState({ title: '', desc: '', })
 
 const handleSubmit = (e) => {
 e.preventDefault() // stop from reloading and losing data and stop putting the input into url
-addList(list)
+if (id) {
+  updateList(id, list)
 
+  setEdit(false)
+} else {
+
+addList(list)
+}
 setList({title: '', desc: '',})
 }
 
@@ -15,13 +21,14 @@ setList({title: '', desc: '',})
   return (
 
   <>
+  <h1>{id ? "Edit" : "Create" } List </h1>
   <form onSubmit={handleSubmit}>
-    <labe>title:</labe>
+    <labe>Title:</labe>
 <input
 //need these 3 things
 name='title' //what is input for
 value={list.title} //where we are ftoring it
-onChange={ (e) => setList({...list, title; e.target.value})} //how we are storing it
+onChange={ (e) => setList({...list, title: e.target.value})} //how we are storing it
 // e is event of typing in the input
 required //make sure something to submit
 placeholder='title' // text within the input box
@@ -30,11 +37,8 @@ placeholder='title' // text within the input box
 name='desc'
 value={list.desc}
 onChange={ (e) => setList({...list, desc: e.target.value})}
-required
-
-
 ></textarea>
-<button type='submit'>Submit</button>
+<button type='submit'>{id? "Update" : "Submit" }</button>
   </form>
   </>
 )
