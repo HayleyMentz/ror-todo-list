@@ -14,7 +14,7 @@ const List = ({ id, title, desc, created_at, updateList, deleteList }) => {
  
   return (
     <>
-     
+     {/* if editing it will show this form */}
       {
         editing ?
         <>
@@ -28,6 +28,7 @@ const List = ({ id, title, desc, created_at, updateList, deleteList }) => {
           />
           <button onClick={() => setEdit(false)}>Cancel</button>
         </>
+        // if not editing thne will show this
         :
         <>
          

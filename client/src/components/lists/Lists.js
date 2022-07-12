@@ -31,7 +31,7 @@ const AddList = (list) => {
 const updateList = (id, list) => {
 axios.put(`/api/lists/${id}`, {list})
 .then( res => {
-  let newUpdatedLists = lists.mao( l => {
+  let newUpdatedLists = lists.map( l => {
     if (l.id === id) {
       return res.data
     }

@@ -5,6 +5,7 @@ const [list, setList] = useState({ title: '', desc: '', })
 
 const handleSubmit = (e) => {
 e.preventDefault() // stop from reloading and losing data and stop putting the input into url
+
 if (id) {
   updateList(id, list)
 
