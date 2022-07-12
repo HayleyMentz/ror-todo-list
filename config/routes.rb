@@ -3,7 +3,7 @@ Rails.application.routes.draw do
    
     resources :lists do 
       resources :todos
-      resources :todos 
+    
     end
 
  
